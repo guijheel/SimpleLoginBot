@@ -1,0 +1,14 @@
+services:
+  sl-bot:
+    build: .
+    container_name: sl-bot-instance
+    restart: unless-stopped
+    environment:
+      - SL_API_KEY=VOTRE_CLE_API_ICI  # Remplace par ta vraie clé
+    volumes:
+      - .:/app
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
